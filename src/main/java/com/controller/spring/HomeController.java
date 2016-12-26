@@ -24,7 +24,7 @@ import com.service.spring.TeamService;
 import com.service.spring.UserSubscriberService;
 
 @Controller
-@RequestMapping(value="/")
+@RequestMapping(value={"", "/", "home"})
 public class HomeController {
 	@Autowired
 	private NavService navService;

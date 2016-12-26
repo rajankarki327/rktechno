@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		">
-		
+
 	<mvc:annotation-driven />
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -30,12 +30,14 @@
 		destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-		value="jdbc:mysql://localhost:3306/company_db" />
-		<beans:property name="username" value="root" />
-		<beans:property name="password" value="root" />
-			<!-- value="jdbc:mysql://127.11.239.2:3306/jbossews" />
+
+			value="jdbc:mysql://127.11.239.2:3306/jbossews" />
 		<beans:property name="username" value="adminV754NcZ" />
-		<beans:property name="password" value="wjLs9dPbrP88" /> -->
+		<beans:property name="password" value="wjLs9dPbrP88" />
+		
+		<!-- value="jdbc:mysql://localhost:3306/company_db" /> <beans:property 
+			name="username" value="root" /> <beans:property name="password" value="root" 
+			/> -->
 	</beans:bean>
 
 	<beans:bean id="hibernate4AnnotatedSessionFactory"
@@ -49,7 +51,7 @@
 				<beans:value>com.model.spring.AboutUsModel</beans:value>
 				<beans:value>com.model.spring.TeamModel</beans:value>
 				<beans:value>com.model.spring.UserSubscriberModel</beans:value>
-								
+
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -81,8 +83,8 @@
 	<beans:bean id="sliderService" class="com.service.spring.SliderService">
 		<beans:property name="sliderDao" ref="sliderDao"></beans:property>
 	</beans:bean>
-	
-		<!-- nav part -->
+
+	<!-- nav part -->
 	<beans:bean id="navDao" class="com.dao.spring.NavDao">
 		<beans:property name="sessionFactory"
 			ref="hibernate4AnnotatedSessionFactory" />
@@ -91,7 +93,7 @@
 	<beans:bean id="navService" class="com.service.spring.NavService">
 		<beans:property name="navDao" ref="navDao"></beans:property>
 	</beans:bean>
-	
+
 	<!-- about-us field -->
 	<beans:bean id="aboutUsDao" class="com.dao.spring.AboutUsDao">
 		<beans:property name="sessionFactory"
@@ -101,7 +103,7 @@
 	<beans:bean id="aboutUsService" class="com.service.spring.AboutUsService">
 		<beans:property name="aboutUsDao" ref="aboutUsDao"></beans:property>
 	</beans:bean>
-	
+
 	<!-- team field -->
 	<beans:bean id="teamDao" class="com.dao.spring.TeamDao">
 		<beans:property name="sessionFactory"
@@ -111,7 +113,7 @@
 	<beans:bean id="teamService" class="com.service.spring.TeamService">
 		<beans:property name="teamDao" ref="teamDao"></beans:property>
 	</beans:bean>
-	
+
 	<!-- eternal user subscribe -->
 	<beans:bean id="userSubscriberDao" class="com.dao.spring.UserSubscriberDao">
 		<beans:property name="sessionFactory"

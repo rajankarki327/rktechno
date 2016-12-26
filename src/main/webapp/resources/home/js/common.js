@@ -149,16 +149,24 @@ VERSION : 1.1
 
 })(jQuery);
 
+$(document).ready(function() {
+	var images = $("#sliders").val();
+	var a = [];
+	images.split(",").forEach(function(i, index) {
+		if (i != null && i !== "") {
+			a[index] = {
+				src : "resources/uploads/" + i
+			};
+		}
+	});
+	/* console.log(a); */
+	$("section.main-heading").vegas({
+		delay : 2000,
+		slides : a,
+		animation : 'kenburns'
+	});
+});
 
 
 /*+++++++++++++++++++++++++COMMON FUNCTIONS++++++++++++++++++++++++++++*/
 
-/*KENBERG SLIDER*/
-
-
-
-// var fullscreenslider=function()
-//  {
-//   
-//	 
-//  }
